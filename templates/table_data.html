@@ -1,0 +1,44 @@
+<!DOCTYPE htl>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello Home</title>
+    </head>
+    <body>
+        <h1>Hello, Welcome...</h1>
+        <h2>This is {{name}}'s movie collection:</h2>
+        <h2>path to the css file:{{url_for('static',filename='css/custom.css')}}</h2>
+        <table>
+            <tr>
+                <th>
+                    movie
+                </th>
+                <th>
+                    length
+                </th>
+                <th>
+                    comment
+                </th>
+            </tr>
+            <tr>
+                {% for movie, length in movies.items()%}
+
+                <tr>
+                    <td>{{movie}}</td>
+                    <td>{{length}}</td>
+                    
+                        {%if length>2%}
+                            <td style="color:red;">long</td>
+                        {%elif (length<2) and (length>1)%}
+                            <td style="color:green;">medium</td>
+                        {%else%}
+                            <td style="color:blue;">short</td>
+                        {%endif%}
+                    
+                </tr>
+                {%endfor%}
+            </tr>
+        </table>
+
+    </body>
+</html>

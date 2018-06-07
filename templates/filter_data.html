@@ -1,0 +1,21 @@
+<!DOCTYPE htl>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello Home</title>
+    </head>
+    <body>
+        <h1>Filter data</h1>
+        {%for movie,duration in movies|dictsort(false, 'value')%}
+            <ul>
+                <!-- movie names are Title cased. Can also UPPERCASE with upper -->
+                <li>{{movie|title}}:{{duration|round(1)}}</li>
+                <!-- <li>{{movie|upper}}:{{duration|round(1)}}</li> --> -->
+                <li></li>
+                
+            </ul>
+        
+        {%endfor%}
+
+    </body>
+</html>

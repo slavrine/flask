@@ -1,0 +1,22 @@
+<!DOCTYPE htl>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello Home</title>
+    </head>
+    <body>
+        <h1>Hello, Welcome...</h1>
+        <h2>This is {{name}} movie list:</h2>
+        <p>no logic: {{movies}}</p>
+        <hr>
+        <p>with logic: </p>
+        {%for item in movies%}
+        <ul>
+            <li>
+                {{item}}
+            </li>
+        </ul>
+        {%endfor%}
+
+    </body>
+</html>

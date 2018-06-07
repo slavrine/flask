@@ -1,0 +1,24 @@
+{%macro render_dict(dictionary)%}
+    <table>
+        <tr>
+            <th>name</th>
+            <th>value</th>
+            <th>comments</th>
+        </tr>
+        {%for key,val in dictionary.items()%}
+            <tr>
+                <td>{{key}}</td>
+                <td>{{val}}</td>
+                
+                    {%if val>2%}
+                        <td style="color:red;">long</td>
+                    {%elif (val<2) and (val>1)%}
+                        <td style="color:green;">medium</td>
+                    {%else%}
+                        <td style="color:blue;">short</td>
+                    {%endif%}
+                
+            </tr>
+        {%endfor%}
+    </table>
+{%endmacro%}
